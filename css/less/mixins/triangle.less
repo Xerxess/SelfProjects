@@ -1,0 +1,33 @@
+﻿//css小三角
+.triangle(@width) {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: @width dashed transparent;
+    overflow: hidden;
+}
+
+.triangle-top(@width: 5px;@color: #ddd;@type: solid) {
+    .triangle(@width);
+    border-bottom: @width @type @color;
+    top: -@width / 2;
+}
+
+.triangle-bottom(@width: 5px;@color: #ddd;@type: solid) {
+    .triangle(@width);
+    border-top: @width @type @color;
+    top: @width / 2;
+}
+
+.triangle-left(@width: 5px;@color: #ddd;@type: solid) {
+    .triangle(@width);
+    border-right: @width @type @color;
+    left: -@width / 2;
+}
+
+.triangle-right(@width: 5px;@color: #ddd;@type: solid) {
+    .triangle(@width);
+    border-left: @width @type @color;
+    left: @width / 2;
+}

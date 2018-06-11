@@ -1,0 +1,102 @@
+/*模拟dropdownlist*/
+div.select {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  width: 72px;
+  height: 30px;
+  border: 1px solid #ccc;
+  background: #fff;
+  vertical-align: middle;
+  font-size: 14px;
+  background: #f1f1f1;
+}
+.select.onfocus {
+  z-index: 9999;
+}
+.select:hover {
+  background: #f5f5f5;
+}
+.select .reveal {
+  margin-right: -5px;
+}
+.select .reveal > span,
+.select .reveal > i {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  cursor: default;
+  float: left;
+}
+.select .reveal > span {
+  width: 35px;
+  text-align: left;
+  color: #666;
+  padding: 0 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.select .reveal > i {
+  display: block;
+  width: 25px;
+  position: relative;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #4fb211;
+  text-align: center;
+}
+.select .reveal > i:hover {
+  background: #f1f1f1;
+}
+.select .reveal > i:before {
+  position: absolute;
+ top:50%;
+  left: 50%;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  margin-top: -2px;
+  border: 5px dashed transparent;
+  border-top: 5px solid #999;
+}
+.select .option-list {
+  display: none;
+  position: absolute;
+  left: -1px;
+  top: 30px;
+  max-height: 225px;
+  overflow-y: auto;
+  width: 72px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+.select .option-list li {
+  height:25px;
+  border: 1px solid #fff;
+  border-left: none;
+  border-right: none;
+  padding: 0px 5px;
+  line-height: 25px;
+  cursor: default;
+}
+.select .option-list li:hover {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+}
+.select .option-list li.option {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+}
+.select .reveal > i {
+  color: #20b6f9 !important;
+}

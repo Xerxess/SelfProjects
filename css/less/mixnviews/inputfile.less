@@ -1,0 +1,38 @@
+.fileup(@w;@h) {
+    width: @w;
+    height: @h;
+    background: #f3f3f3;
+    color: #999;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    zoom: 1;
+    overflow: hidden;
+
+    &:hover {
+        background: #f3f3f3;
+        color: #888;
+    }
+
+    
+    a {
+        display: block;
+        width: 98px;
+        height: 28px;
+        text-align: center;
+        line-height: 28px;
+        background: #f3f3f3;
+        color: #999;
+    }
+
+    input {
+        height: 256px;
+        font-size: 300px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        cursor: pointer;
+    }
+}

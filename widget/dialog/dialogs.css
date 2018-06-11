@@ -1,0 +1,178 @@
+.zx-dialog2 {
+    position: absolute;
+    top: -999px;
+    left: -999px;
+    z-index: 9999;
+    background: #fff;
+    border: 1px solid #bbb;
+    -webkit-box-shadow: 0 0 10px #888;
+    box-shadow: 0 0 10px rgba(225, 225, 225, .3);
+    overflow: hidden;
+}
+
+.zx-dialog2 .zx-dialog-header {
+    position: relative;
+    background: #f5f5f9;
+    height: 50px;
+    zoom: 1;
+    border-bottom: 1px solid #fff;
+    overflow-y: hidden;
+}
+
+.zx-dialog2 .zx-dialog-header:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both
+}
+
+.zx-dialog2 .zx-dialog-header .dialog-title {
+    float: left;
+    color: #000;
+    margin-left: 20px;
+    font-size: 16px;
+    line-height: 50px;
+    letter-spacing: 0px;
+}
+
+.zx-dialog2 .zx-dialog-header .dialog-opts {
+    float: right
+}
+
+.zx-dialog2 .zx-dialog-header .dialog-opts .close {
+    display: inline-block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    right: 10px;
+    top: 16px;
+    text-indent: -100000px;
+    cursor: pointer;
+    outline: 0;
+    z-index: 1000;
+    background: url() no-repeat center;
+    opacity: .6;
+    transition: all .5s;
+    overflow: hidden;
+}
+
+.zx-dialog2 .zx-dialog-header .dialog-opts .close:hover {
+    opacity: 1;
+    transform: rotate(-180deg)
+}
+
+.zx-dialog2 .zx-dialog-body {
+    overflow-y: auto;
+}
+
+.zx-dialog2 .analog-sys-controls .content {
+    margin: 0 !important
+}
+
+.zx-dialog2 .analog-sys-controls .content .align {
+    text-align: center
+}
+
+.zx-dialog2 .analog-sys-controls .content .top-bottom-30 {
+    padding-top: 30px;
+    padding-bottom: 30px
+}
+
+.zx-dialog2 .analog-sys-controls .content .top-bottom-50 {
+    padding-top: 50px;
+    padding-bottom: 50px
+}
+
+.zx-dialog2 .analog-sys-controls .foot_opts {
+    background: #f5f5f9;
+    padding: 0px;
+    border-top: 1px solid #fff;
+    text-align: center;
+    letter-spacing: -4px
+}
+.zx-dialog2 .analog-sys-controls .foot_opts >div{
+    padding: 15px 10px;
+}
+
+.zx-dialog2 .analog-sys-controls.analog-sys-controls-simplify {
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.zx-dialog2 .analog-sys-controls .foot-opts-simplify {
+    padding: 20px 10px;
+    text-align: center;
+    letter-spacing: -4px;
+    background: #fff;
+}
+
+.zx-dialog2 .analog-sys-controls .foot-opts-simplify button {
+    width: 70px;
+    height: 30px;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    margin: 0px 5px;
+    padding: 0;
+    font-size: 16px;
+}
+
+.zx-dialog2 .analog-sys-controls .foot-opts-simplify button.cancel {
+    background: #f5f7f9 !important;
+    border: 1px solid #e0e0e0 !important;
+    color: #666 !important;
+
+}
+.zx-dialog2 .analog-sys-controls .foot-opts-simplify button.cancel:hover {
+    background: #fbfbfb
+}
+.zx-dialog2 .analog-sys-controls .foot-opts-simplify button.ok {
+    background: #1b92ee;
+    border: 1px solid #1b92ee;
+    color: #fff;
+}
+
+.zx-dialog2 .analog-sys-controls .foot-opts-simplify button.ok:hover {
+    background: #32a2f9
+}
+
+.zx-dialog2 .analog-sys-controls .foot_opts button, .zx-dialog2 .analog-sys-controls .foot_opts a, .zx-dialog2 .analog-sys-controls .foot_opts input[type='button'] {
+    letter-spacing: normal;
+    border: 0;
+    margin: 0 5px;
+    padding: 0;
+}
+
+.zx-dialog2 .analog-sys-controls .foot_opts button.ok, .zx-dialog2 .analog-sys-controls .foot_opts a.ok, .zx-dialog2 .analog-sys-controls .foot_opts input[type='button'].ok {
+    display: inline-block;
+
+    width: 100px;
+    height: 34px;
+    color: #fff;
+    line-height: 34px;
+    background: #1b92ee;
+    border-radius: 3px;
+    text-decoration: none
+}
+
+.zx-dialog2 .analog-sys-controls .foot_opts button.ok:hover, .zx-dialog2 .analog-sys-controls .foot_opts a.ok:hover, .zx-dialog2 .analog-sys-controls .foot_opts input[type='button'].ok:hover {
+    background: #32a2f9
+}
+
+.zx-dialog2 .analog-sys-controls .foot_opts button.cancel, .zx-dialog2 .analog-sys-controls .foot_opts a.cancel, .zx-dialog2 .analog-sys-controls .foot_opts input[type='button'].cancel {
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+    color: #fff;
+    line-height: 34px;
+    background: #ffba32;
+    border-radius: 3px;
+    text-decoration: none
+}
+
+.zx-dialog2 .analog-sys-controls .foot_opts button.cancel:hover, .zx-dialog2 .analog-sys-controls .foot_opts a.cancel:hover, .zx-dialog2 .analog-sys-controls .foot_opts input[type='button'].cancel:hover {
+    background: #fdb72b;
+}

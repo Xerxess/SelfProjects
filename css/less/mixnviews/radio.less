@@ -1,0 +1,101 @@
+/*radio*/
+.radio(@w:18px,@h:18px,@checkcolor:#16baf6) {
+  .radioFive {
+    display: inline-block;
+    position: relative;
+    *zoom: 1;
+    *display: inline;
+    vertical-align: middle;
+    overflow: hidden;
+    *{
+      float: left;
+    }
+  }
+  .radioFive input[type=radio] {
+    margin: 0px;
+    visibility: visible;
+    &:hover {
+      border-color: #22a4fa;
+    }
+    label {
+      display: none;
+    }
+  }
+  :root {
+    .radioFive {
+      display: inline-block;
+      width: @w;
+      height: @h;
+      border-radius: 50%;
+      position: relative;
+      *zoom: 1;
+      *display: inline;
+      vertical-align: middle;
+      input[type=radio] {
+        border: 0px solid #ddd;
+        margin: 0px;
+        padding: 0px;
+        visibility: hidden;
+      }
+
+      &.disabled {
+        label {
+          background: #ddd;
+          cursor: not-allowed;
+          &:hover {
+            border-color: #ddd !important;
+          }
+        }
+      }
+      label {
+        @ww: (@w - 2)* .5;
+        cursor: pointer;
+        position: absolute;
+        width: @w - 2;
+        height: @h - 2;
+        top: 0;
+        left: 0px;
+        background: #fff;
+        border: 1px solid #ddd;
+        display: block;
+        border-radius: 50%;
+        .transition(all .3s);
+        >span{
+          position: absolute;
+          left:@w+ 10px ;
+          width: 120px;
+          font-size: 14px;
+          line-height: 14px;
+        }
+        &:after {
+          opacity: 0.2;
+          content: '';
+          position: absolute;
+          left:((@w - 2)- @ww)/2;
+          top:((@h - 2)- @ww)/2;
+          width: @ww;
+          height: @ww;
+          background: transparent;
+          border-radius: 50%;          
+          
+        }
+        &:hover {
+          border-color: @checkcolor;
+        }
+        //&:hover:after {
+        //  border: floor(@w*0.1) solid @checkcolor;
+        //  border-top: none;
+        //  border-right: none;
+        //  opacity: 0.5;
+        //}
+      }
+      input[type=radio]:checked + label {
+        border-color: @checkcolor;
+        &:after {
+          opacity: 1;
+          background: @checkcolor;
+        }
+      }
+    }
+  }
+}

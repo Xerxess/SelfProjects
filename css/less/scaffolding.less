@@ -1,0 +1,104 @@
+﻿//
+// Scaffolding 骨架
+// --------------------------------------------------
+// Body reset
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    font: @base-font;
+    color: @color-333;
+    background-color: @body-bg;
+    min-width: @body-width;
+    //min-height: @body-height;
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+// Links
+a {
+    color: @link-color;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+figure {
+    margin: 0;
+}
+// Images
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+div,
+ul,
+dl,
+p,
+input,
+iframe {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li,
+dl dd {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6, i, s, font {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+textarea {
+    resize: none;
+    -webkit-appearance: none;
+}
+
+input,
+textarea,
+button {
+    outline: none;
+}
+
+input[type='checkbox'] {
+    position: relative;
+    top: 2px;
+}

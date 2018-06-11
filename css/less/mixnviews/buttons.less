@@ -1,0 +1,51 @@
+﻿/**
+    通用按钮类
+*/
+.custom-btn(@back,@color,@w,@h) {
+    display: inline-block;
+    width: @w;
+    height: @h;
+    color: @color;
+    line-height: @h;
+    background: @back;
+    border-radius: 2px;
+    text-decoration: none;
+    &:hover {
+        background: lighten(@back, 5%);
+    }
+}
+
+//边框
+.custom-btn-border-yes(@back,@color,@w,@h,@border,@hover:true) {
+    display: inline-block;
+    width: @w;
+    height: @h;
+    color: @color;
+    line-height: @h;
+    background: @back;
+    border:@border;
+    text-decoration: none;
+
+   & when (@hover=true) {
+       &:hover {
+           background: lighten(@back, 5%);
+       }
+}
+
+}
+
+//无边框
+.custom-btn-border-no(@back,@color,@w,@h) {
+    display: inline-block;
+    width: @w;
+    height: @h;
+    color: @color;
+    line-height: @h;
+    background: @back;
+    border: none;
+    text-decoration: none;
+
+    &:hover {
+        background: lighten(@back, 5%);
+    }
+}

@@ -1,0 +1,47 @@
+//tips
+// Core variables and mixins
+@import "../variables.less";
+@import "../mixins.less";
+@import "ui-animation.less";
+
+.hl-ui {
+  .box-shadow(0 0 10px rgba(169, 169, 169, .5));
+  &.hlui-tip {
+    position: fixed;
+    z-index: 128888;
+    .hlui-tip-body {
+      text-align: center;
+      color: #fff;
+      font-size: @font-18;
+      padding: 8px 15px;
+      &.ok{
+        background: #4ead4e;
+        &:before {
+          content: '';
+          display: inline-block;
+          margin: 0px 10px;
+          width: 28px;
+          height: 19px;
+          background: url(/static/images/v2.2/hlui/tips.png) no-repeat;
+          vertical-align: middle;
+        }
+      }
+      &.error{
+        background: #e43723;
+        &:before {
+          //content: '';
+          //display: inline-block;
+          //margin: 0px 10px;
+          //width: 28px;
+          //height: 19px;
+          //background: url(/static/images/v2.2/hlui/tips.png) no-repeat;
+          //vertical-align: middle;
+        }
+      }
+      &.warning{
+        background: #fba012;
+        color:#fff ;
+      }
+    }
+  }
+}

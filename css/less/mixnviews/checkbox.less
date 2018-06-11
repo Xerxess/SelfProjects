@@ -1,0 +1,95 @@
+/*checkbox样式*/
+.checkbox(@w:25px,@h:25px,@checkcolor:#16baf6) {
+  .checkboxFive {
+    display: inline-block;
+    position: relative;
+    *zoom: 1;
+    *display: inline;
+    vertical-align: middle;
+    *{
+      float: left;
+    }
+  }
+  .checkboxFive input[type=checkbox] {
+    margin: 0px;
+    visibility: visible;
+    &:hover {
+      border-color: #22a4fa;
+    }
+    label {
+      display: none;
+    }
+  }
+  :root {
+    .checkboxFive {
+      display: inline-block;
+      width: @w;
+      height: @h;
+      position: relative;
+      *zoom: 1;
+      *display: inline;
+      vertical-align: middle;
+      input[type=checkbox] {
+        border: 0px solid #ddd;
+        margin: 0px;
+        padding: 0px;
+        visibility: hidden;
+      }
+
+      &.disabled{
+        label{
+          background: #ddd;
+          cursor: not-allowed;
+          &:hover{
+            border-color:#ddd !important;
+          }
+        }
+      }
+      label {
+        @ww: (@w - 2)* .6;
+        @hh: (@h - 2)* .25;
+        cursor: pointer;
+        position: absolute;
+        width: @w - 2;
+        height: @h - 2;
+        top: 0;
+        left: 0px;
+        background: #eee;
+        border: 1px solid #ddd;
+        display: block;
+       .transition(all .3s);
+        &:after {
+          opacity: 0.2;
+          content: '';
+          position: absolute;
+          width:  @ww;
+          height:@hh;
+          background: transparent;
+          left:(@w - 2)/2 - @ww/2;
+          top:floor(@h/2 - @hh/2 -  (tan(45deg)*(@hh)/2));
+          border: floor(@w*0.1) solid transparent;
+          border-top: none;
+          border-right: none;
+          .rotate(-45deg);
+        }
+        &:hover{
+          border-color: @checkcolor;
+          .box-shadow(0 0 5px rgba(221,221,221,.5));
+        }
+        //&:hover:after {
+        //  border: floor(@w*0.1) solid @checkcolor;
+        //  border-top: none;
+        //  border-right: none;
+        //  opacity: 0.5;
+        //}
+      }
+      input[type=checkbox]:checked + label{
+        border-color: @checkcolor;
+        &:after {
+          opacity: 1;
+          border-color: @checkcolor;
+        }
+      }
+    }
+  }
+}

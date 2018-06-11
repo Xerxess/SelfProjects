@@ -1,0 +1,370 @@
+﻿// Vendor Prefixes
+//
+// All vendor mixins are deprecated as of v3.2.0 due to the introduction of
+// Autoprefixer in our Gruntfile. They will be removed in v4.
+
+// - Animations
+// - Backface visibility
+// - Box shadow
+// - Box sizing
+// - Content columns
+// - Hyphens
+// - Placeholder text
+// - Transformations
+// - Transitions
+// - User Select
+
+// Animations
+//.keyframess(@frames){
+//  @frames();
+//};
+//.keyframes(@name;@frames) {
+//  @-webkit-keyframes @name { .keyframess(@frames);}
+//  @-moz-keyframes @name { @frames();}
+//  @-ms-keyframes @name { @frames();}
+//  @-o-keyframes @name { @frames();}
+//  @keyframes @name { @frames();}
+//}
+
+
+/*全局*/
+.animation(@animation) {
+  -webkit-animation: @animation;
+  -ms-animation: @animation;
+  -moz-animation: @animation;
+  -o-animation: @animation;
+  animation: @animation;
+}
+
+/*规定 @keyframes 动画的名称*/
+.animation-name(@name) {
+  -webkit-animation-name: @name;
+  animation-name: @name;
+}
+
+/*规定动画完成一个周期所花费的秒或毫秒。*/
+.animation-duration(@duration) {
+  -webkit-animation-duration: @duration;
+  animation-duration: @duration;
+}
+
+/*规定动画的速度曲线。*/
+.animation-timing-function(@timing-function) {
+  -webkit-animation-timing-function: @timing-function;
+  animation-timing-function: @timing-function;
+}
+
+/*规定动画何时开始。*/
+.animation-delay(@delay) {
+  -webkit-animation-delay: @delay;
+  animation-delay: @delay;
+}
+
+/*	规定动画被播放的次数。n|infinite*/
+.animation-iteration-count(@iteration-count) {
+  -webkit-animation-iteration-count: @iteration-count;
+  animation-iteration-count: @iteration-count;
+}
+
+/*规定动画是否在下一周期逆向地播放。normal|alternate*/
+.animation-direction(@direction) {
+  -webkit-animation-direction: @direction;
+  animation-direction: @direction;
+}
+
+/*规定对象动画时间之外的状态。none | forwards | backwards | both;*/
+.animation-fill-mode(@fill-mode) {
+  -webkit-animation-fill-mode: @fill-mode;
+  animation-fill-mode: @fill-mode;
+}
+
+// Backface visibility
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden`
+//决定元素背面在面向用户时是否可见: visible | hidden
+.backface-visibility(@visibility) {
+  -webkit-backface-visibility: @visibility;
+  -moz-backface-visibility: @visibility;
+  backface-visibility: @visibility;
+}
+
+// Drop shadows
+//
+// Note: Deprecated `.box-shadow()` as of v3.1.0 since all of Bootstrap's
+// supported browsers that have box shadow capabilities now support it.
+//设置或检索对象阴影
+//box-shadow:none | <length>① <length>② <length>③ <length>④ <color> inset
+//none	无阴影
+//<length>①	第1个长度值用来设置对象的阴影水平偏移值。可以为负值
+//<length>②	第2个长度值用来设置对象的阴影垂直偏移值。可以为负值
+//<length>③	如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值
+//<length>④	如果提供了第4个长度值则用来设置对象的阴影外延值。可以为负值
+//<color>	设置对象的阴影的颜色。
+//inset	设置对象的阴影类型为内阴影。该值为空时，则对象的阴影类型为外阴影
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+  box-shadow: @shadow;
+}
+
+// Box sizing
+//设置或检索对象的盒模型组成模式
+//box-sizing:content-box | border-box
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+  -moz-box-sizing: @boxmodel;
+  box-sizing: @boxmodel;
+}
+
+// CSS3 Content Columns
+//指定需要在多流的列数. 这个属性的改变可以是动态的
+//column-count: number | auto
+.content-columns(@column-count; @column-gap: @grid-gutter-width) {
+  -webkit-column-count: @column-count;
+  -moz-column-count: @column-count;
+  column-count: @column-count;
+  -webkit-column-gap: @column-gap;
+  -moz-column-gap: @column-gap;
+  column-gap: @column-gap;
+}
+
+// Optional hyphenation
+//设置如何对单词进行拆分，以改善段落的布局。
+.hyphens(@mode: auto) {
+  word-wrap: break-word;
+  -webkit-hyphens: @mode;
+  -moz-hyphens: @mode;
+  -ms-hyphens: @mode; // IE10+
+  -o-hyphens: @mode;
+  hyphens: @mode;
+}
+
+// Placeholder text
+//修改输入框placeholder文字默认颜色
+.placeholder(@color: @input-color-placeholder) {
+  // Firefox
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder {
+    color: @color !important;;
+  }
+  // Internet Explorer 10+
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+  // Safari and Chrome
+}
+
+// Transformations
+//缩放
+.scale(@ratio) {
+  -webkit-transform: scale(@ratio);
+  -ms-transform: scale(@ratio); // IE9 only
+  -o-transform: scale(@ratio);
+  transform: scale(@ratio);
+}
+
+.scale(@ratioX; @ratioY) {
+  -webkit-transform: scale(@ratioX, @ratioY);
+  -ms-transform: scale(@ratioX, @ratioY); // IE9 only
+  -o-transform: scale(@ratioX, @ratioY);
+  transform: scale(@ratioX, @ratioY);
+}
+
+.scaleX(@ratio) {
+  -webkit-transform: scaleX(@ratio);
+  -ms-transform: scaleX(@ratio); // IE9 only
+  -o-transform: scaleX(@ratio);
+  transform: scaleX(@ratio);
+}
+
+.scaleY(@ratio) {
+  -webkit-transform: scaleY(@ratio);
+  -ms-transform: scaleY(@ratio); // IE9 only
+  -o-transform: scaleY(@ratio);
+  transform: scaleY(@ratio);
+}
+
+.skew(@x; @y) {
+  -webkit-transform: skewX(@x) skewY(@y);
+  -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
+  -o-transform: skewX(@x) skewY(@y);
+  transform: skewX(@x) skewY(@y);
+}
+
+//2D 转换
+.translate(@x; @y) {
+  -webkit-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y); // IE9 only
+  -o-transform: translate(@x, @y);
+  transform: translate(@x, @y);
+}
+
+//3D 转换
+.translate3d(@x; @y; @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+  transform: translate3d(@x, @y, @z);
+}
+
+//旋转
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees); // IE9 only
+  -o-transform: rotate(@degrees);
+  transform: rotate(@degrees);
+}
+
+.rotateX(@degrees) {
+  -webkit-transform: rotateX(@degrees);
+  -ms-transform: rotateX(@degrees); // IE9 only
+  -o-transform: rotateX(@degrees);
+  transform: rotateX(@degrees);
+}
+
+.rotateY(@degrees) {
+  -webkit-transform: rotateY(@degrees);
+  -ms-transform: rotateY(@degrees); // IE9 only
+  -o-transform: rotateY(@degrees);
+  transform: rotateY(@degrees);
+}
+
+//为 3D 转换元素定义透视视图。
+.perspective(@perspective) {
+  -webkit-perspective: @perspective;
+  -moz-perspective: @perspective;
+  perspective: @perspective;
+}
+
+.perspective-origin(@perspective) {
+  -webkit-perspective-origin: @perspective;
+  -moz-perspective-origin: @perspective;
+  perspective-origin: @perspective;
+}
+
+//transform-origin 属性允许您改变被转换元素的位置。
+.transform-origin(@origin) {
+  -webkit-transform-origin: @origin;
+  -moz-transform-origin: @origin;
+  -ms-transform-origin: @origin; // IE9 only
+  transform-origin: @origin;
+}
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+
+//规定应用过渡的 CSS 属性的名称。
+.transition-property(@transition-property) {
+  -webkit-transition-property: @transition-property;
+  transition-property: @transition-property;
+}
+
+//规定过渡效果何时开始。
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+  transition-delay: @transition-delay;
+}
+
+//定义过渡效果花费的时间。
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+  transition-duration: @transition-duration;
+}
+
+//规定过渡效果的时间曲线。
+.transition-timing-function(@timing-function) {
+  -webkit-transition-timing-function: @timing-function;
+  transition-timing-function: @timing-function;
+}
+
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition;
+  -moz-transition: -moz-transform @transition;
+  -o-transition: -o-transform @transition;
+  transition: transform @transition;
+}
+
+// User select
+// For selecting text on the page
+.user-select(@select) {
+  -webkit-user-select: @select;
+  -moz-user-select: @select;
+  -ms-user-select: @select; // IE10+
+  user-select: @select;
+}
+
+/*escape(@string); // 通过 URL-encoding 编码字符串
+e(@string); // 对字符串转义
+%(@string, values...); // 格式化字符串
+unit(@dimension, [@unit: ""]); // 移除或替换属性值的单位
+color(@string); // 将字符串解析为颜色值
+data-uri([mimetype,] url); // * 将资源内嵌到css中，可能回退到url()
+ceil(@number); // 向上取整
+floor(@number); // 向下取整
+percentage(@number); // 将数字转换为百分比，例如 0.5 -> 50%
+round(number, [places: 0]); // 四舍五入取整
+sqrt(number); // * 计算数字的平方根
+abs(number); // * 数字的绝对值
+sin(number); // * sin函数
+asin(number); // * arcsin函数
+cos(number); // * cos函数
+acos(number); // * arccos函数
+tan(number); // * tan函数
+atan(number); // * arctan函数
+pi(); // * 返回PI
+pow(@base, @exponent); // * 返回@base的@exponent次方
+mod(number, number); // * 第一个参数对第二个参数取余
+convert(number, units); // * 在数字之间转换
+unit(number, units); // * 不转换的情况下替换数字的单位
+color(string); // 将字符串或者转义后的值转换成颜色
+rgb(@r, @g, @b); // 转换为颜色值
+rgba(@r, @g, @b, @a); // 转换为颜色值
+argb(@color); // 创建 #AARRGGBB 格式的颜色值
+hsl(@hue, @saturation, @lightness); // 创建颜色值
+hsla(@hue, @saturation, @lightness, @alpha); // 创建颜色值
+hsv(@hue, @saturation, @value); // 创建颜色值
+hsva(@hue, @saturation, @value, @alpha); // 创建颜色值
+hue(@color); // 从颜色值中提取 hue 值（色相）
+saturation(@color); // 从颜色值中提取 saturation 值（饱和度）
+lightness(@color); // 从颜色值中提取 'lightness' 值（亮度）
+hsvhue(@color); // * 从颜色中提取 hue 值，以HSV色彩空间表示（色相）
+hsvsaturation(@color); // * 从颜色中提取 saturation 值，以HSV色彩空间表示（饱和度）
+hsvvalue(@color); // * 从颜色中提取 value 值，以HSV色彩空间表示（色调）
+red(@color); // 从颜色值中提取 'red' 值（红色）
+green(@color); // 从颜色值中提取 'green' 值（绿色）
+blue(@color); // 从颜色值中提取 'blue' 值（蓝色）
+alpha(@color); // 从颜色值中提取 'alpha' 值（透明度）
+luma(@color); // 从颜色值中提取 'luma' 值（亮度的百分比表示法）
+saturate(@color, 10%); // 饱和度增加 10%
+desaturate(@color, 10%); // 饱和度降低 10%
+lighten(@color, 10%); // 亮度增加 10%
+darken(@color, 10%); // 亮度降低 10%
+fadein(@color, 10%); // 透明度增加 10%
+fadeout(@color, 10%); // 透明度降低 10%
+fade(@color, 50%); // 设定透明度为 50%
+spin(@color, 10); // 色相值增加 10
+mix(@color1, @color2, [@weight: 50%]); // 混合两种颜色
+greyscale(@color); // 完全移除饱和度，输出灰色
+contrast(@color1, [@darkcolor: black], [@lightcolor: white], [@threshold: 43%]); // 如果 @color1 的 luma 值 > 43% 输出 @darkcolor，否则输出 @lightcolor
+multiply(@color1, @color2);
+screen(@color1, @color2);
+overlay(@color1, @color2);
+softlight(@color1, @color2);
+hardlight(@color1, @color2);
+difference(@color1, @color2);
+exclusion(@color1, @color2);
+average(@color1, @color2);
+negation(@color1, @color2);
+iscolor(@colorOrAnything); // 判断一个值是否是颜色
+isnumber(@numberOrAnything); // 判断一个值是否是数字（可含单位）
+isstring(@stringOrAnything); // 判断一个值是否是字符串
+iskeyword(@keywordOrAnything); // 判断一个值是否是关键字
+isurl(@urlOrAnything); // 判断一个值是否是url
+ispixel(@pixelOrAnything); // 判断一个值是否是以px为单位的数值
+ispercentage(@percentageOrAnything); // 判断一个值是否是百分数
+isem(@emOrAnything); // 判断一个值是否是以em为单位的数值
+isunit(@numberOrAnything, "rem"); // * 判断一个值是否是指定单位的数值*/
